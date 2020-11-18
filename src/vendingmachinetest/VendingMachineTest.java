@@ -1,7 +1,6 @@
 
 package vendingmachinetest;
 
-import java.util.Scanner;
 
 public class VendingMachineTest {
 

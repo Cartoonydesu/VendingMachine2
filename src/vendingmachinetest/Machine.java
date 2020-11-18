@@ -28,9 +28,23 @@ public class Machine {
         machine[select].tookOut();
     }
     public void check(int money,int select){
-        mon = new Money(money,select,machine);
+        if(select==-1){
+            System.out.println("Admin using");
+        }
+        else if(select<0||select>3){
+            System.out.println("Unknown input");
+        }
+        else if(machine[select].getNum()==0){
+            System.out.println("Sold out");
+        }
+        else if(select<index){
+            int cost = machine[select].getCost();
+            mon = new Money(money,select,cost);
+            if(money>=cost){
+                machine[select].tookOut();
+            }
+        }
     }
-    
     
     @Override
     public String toString() {

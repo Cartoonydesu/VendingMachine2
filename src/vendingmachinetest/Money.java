@@ -2,32 +2,25 @@
 package vendingmachinetest;
 
 public class Money {
-    private int mon;
-    Machine machine[];
-        
-    public Money(int money, int select,Drink[] machine){
-        if(machine[select].getNum()==0){
-            soldOut(money);
+    
+    public Money(int money, int select,int cost){
+        if(money<0){
+            System.out.println("Please enter money again");
         }
-        else if(money<machine[select].getCost()){
+        else if(money<cost){
             notEnough(money);
         }
-        else if(money>=machine[select].getCost()){
-            buy(money, select,machine);
+        else if(money>=cost){
+            buy(money, select, cost);
         }
     }
-    public void soldOut(int money){
-            System.out.println("Sold Out");
-            System.out.println("Return : " + money + " bahts");
-    }
-    public void notEnough(int money){
+    private void notEnough(int money){
             System.out.println("Not enough money to buy");
             System.out.println("Return : " + money + " bahts");   
     }
-    public void buy(int money,int select,Drink[] machine){
-            money = money - machine[select].getCost();
-            machine[select].tookOut();
-            System.out.println("Output : " + machine[select].getName()+
+    private void buy(int money,int select,int cost){
+            money = money - cost;
+            System.out.println("Output : " + "Receive drink"+
                                 "\nChange : " + money + " bahts");
     }
 }

@@ -15,16 +15,17 @@ public class VendingMachine {
         m.addDrink(water);
         m.addDrink(milk);
         m.addDrink(juice);
-        System.out.println(m);
         int select;
         int money;
         Scanner scn = new Scanner(System.in);
         do{
+            System.out.println(m);
             System.out.print("Enter your money:");
             money = scn.nextInt();
             System.out.print("Select Drink:");
             select = scn.nextInt();
             m.check(money,select);
+            System.out.println("");
         }while(select!=-1);
     }
 }
