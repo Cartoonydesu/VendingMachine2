@@ -33,11 +33,9 @@ public class Machine {
         }
         else if(select<0||select>index-1){
             System.out.println("Unknown input");
-            System.out.println("Return : " + money + " bahts"); 
         }
         else if(machine[select].getNum()==0){
-            System.out.println("Sold out");
-            System.out.println("Return : " + money + " bahts"); 
+            System.out.println("Sold out"); 
         }
         else if(select<index){
             int cost = machine[select].getCost();
