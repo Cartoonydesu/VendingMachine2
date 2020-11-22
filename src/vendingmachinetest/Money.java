@@ -1,4 +1,4 @@
-
+//
 package vendingmachinetest;
 
 public class Money {
