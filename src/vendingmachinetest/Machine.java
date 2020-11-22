@@ -31,15 +31,17 @@ public class Machine {
         if(select==-1){
             System.out.println("Admin using");
         }
-        else if(select<0||select>3){
+        else if(select<0||select>index-1){
             System.out.println("Unknown input");
+            System.out.println("Return : " + money + " bahts"); 
         }
         else if(machine[select].getNum()==0){
             System.out.println("Sold out");
+            System.out.println("Return : " + money + " bahts"); 
         }
         else if(select<index){
             int cost = machine[select].getCost();
-            mon = new Money(money,select,cost);
+            mon = new Money(money,cost);
             if(money>=cost){
                 machine[select].tookOut();
             }

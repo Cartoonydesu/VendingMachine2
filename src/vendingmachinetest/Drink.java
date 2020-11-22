@@ -14,7 +14,6 @@ package vendingmachinetest;
     public String getName(){return name;}
     public int getCost(){return cost;}
     public int getNum(){return num;}
-    public void addNum(int add){num+=add;}
     public void tookOut(){num=(num==0) ? num : num-1;}
     
     @Override
